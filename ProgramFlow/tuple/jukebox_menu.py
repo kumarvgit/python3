@@ -16,15 +16,12 @@ while True:
     else:
         break
 
-    print('PLease choose your song:')
+    print('Please choose your song:')
     for index, (track_number, song) in enumerate(songs_list):
         print("{}: {}".format(index + 1, song))
 
     song_choice = int(input())
     if 1 <= song_choice <= len(songs_list):
         title = songs_list[song_choice - 1][SONG_TITLE_INDEX]
-        pass
-    else:
-        break
-    print("Playing {}".format(title))
+        print("Playing {}".format(title))
     print('*' * 80)

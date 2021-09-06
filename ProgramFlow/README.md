@@ -4,3 +4,5 @@
 > object id is going to change unlike java where reassignment is allowed
 
 ### MOst function which operate on object does not return any value like list.sort() - this sorts the list directly
+
+### Dict needs an immutable object as key

@@ -6,3 +6,5 @@
 ### MOst function which operate on object does not return any value like list.sort() - this sorts the list directly
 
 ### Dict needs an immutable object as key
+
+#### Data and time is stored as 32 bit signed integer since 1 jan 1970, this is going to overflow sometime in Feb, 2038 since it will go out of range of int, on 32bit combuters

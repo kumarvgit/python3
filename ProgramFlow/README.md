@@ -54,3 +54,10 @@
         > kettle obj has 2 attribute make and proce,
         > if we add dynamically a variable called power to instance k1 then instance variable 
         > k2 will not have access to the same
+
+## Init is not a constructor
+> Init method is not necessarly a constructor in beyond python 2.2 
+since in python the object creation is a two step process
+    1. new method creates an object
+    2. init method provides customization to it which is called by new method
+    

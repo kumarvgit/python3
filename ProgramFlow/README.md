@@ -67,5 +67,8 @@ since in python the object creation is a two step process
 > with _<class_name><VAR_NAME>
 > e.g. a var in class is __amount in Accounts class the effective variable name would be
 > _Accounts__amount
-> 
+
+
+#### raw strings (changes the way python interprets the string with or without escape chars) -> r"i can include \t in string"
+#### every thing in python is an object including a method
     

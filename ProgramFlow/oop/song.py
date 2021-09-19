@@ -3,11 +3,11 @@ class Song(object):
 
     Attributes:
         title (str): the title of the song
-        artist (Artist): Artist of the song
+        artist (str): name of artist of the song
         duration (int): The duration of song in seconds and my be 0
     """
 
-    def __init__(self, title, artist, duration: int = 0):
+    def __init__(self, title, artist: str, duration: int = 0):
         """Song Init method - refer PEP 257
 
         title (str): initializes 'artist' attribute
@@ -32,7 +32,7 @@ class Album(object):
     Attributes:
         name (str): Name of album
         year (int): published year
-        artist (Artist): The creator of artist
+        artist (str): The creator of artist name
             if not specified defaults to Artist with name "various artist"
         tracks (List[Song]): A list of song
 
@@ -40,11 +40,11 @@ class Album(object):
         add_songs: Add a new song to tracks list
     """
     
-    def __init__(self, name, year, artist=None):
+    def __init__(self, name, year, artist: str = None):
         self.name = name
         self.year = year
         if artist is None:
-            self.artist = Artist('Various Artists')
+            self.artist = 'Various Artists'
         else:
             self.artist = artist
         self.tracks = []
@@ -107,11 +107,12 @@ class Artist:
         album_found = find_object(name, self.albums)
         if album_found is None:
             print(name + " not found")
-            album_found = Album(name, year, self)
+            album_found = Album(name, year, self.name)
             self.add_album(album_found)
         else:
             print("Found album " + name)
 
+        # This is not a proplem since there is a property assigned to it
         album_found.add_song(title)
 
 

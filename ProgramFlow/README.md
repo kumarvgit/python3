@@ -22,4 +22,35 @@
 
 #### global keyword inside the functions directs python to access global scope of the variable and modify it
 
-#### starts with _ var or func it is considered protected
+#### starts with underscore var or func it is considered protected
+####  underscore is called throw away variable
+> a throw away variable
+> name, this is escape char\_, _ = person_details
+> print(name)
+> print(_)
+
+#### We can define function inside function in python
+#### non local
+> nonlocal scope rather it is in the parent function i.e. enclosing scope
+> we can not re assign a value in non local scope
+> effectively nonlocal tab_stop = 0 will give error
+> unlike global in shadowing case python creats a local variable but in nonlocal case it wont create the variable
+
+#### LEGB - PYTHON variable resolution stratgey
+> L local
+> E enclosing
+> G global
+> B Builtins
+
+#### Fields are called attributes in python
+#### methods are bound to class and will have self on the other hand functions dont have self in their defs
+#### Python conventions 
+    1 Class: template for creating objects. All objects created using the same class will have the same characteristics.
+    2 Object: an instance of a class.
+    3 Instantiate: create an instance of a class.
+    4 Method: a function defined in a class.
+    5 Attribute: a variable bound to an instance of a class.
+    6 Instance objects are only bound to a an instance of the object but not to class
+        > kettle obj has 2 attribute make and proce,
+        > if we add dynamically a variable called power to instance k1 then instance variable 
+        > k2 will not have access to the same

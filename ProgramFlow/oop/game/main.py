@@ -22,3 +22,6 @@ print(tim)
 
 tim.level = tim.level - 2
 print(tim)
+
+tim.score = 500
+print(tim)

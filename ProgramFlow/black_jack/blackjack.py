@@ -206,10 +206,6 @@ shuffle()
 dealer_hand = []
 player_hand = []
 
-new_game()
-
-mainWindow.mainloop()
-
 if __name__ == "__main__":
     print(__file__ + ' is running as main')
     play()

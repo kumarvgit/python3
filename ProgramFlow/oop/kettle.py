@@ -1,5 +1,9 @@
 class Kettle(object):
 
+    # class variable which is going to be same for class and any instance variable it uses
+    # We can change this value as well
+    power_source = 'Electricity'
+
     def __init__(self, make, price):
         """
         Constructor for class
@@ -39,6 +43,7 @@ print(hamilton.on)
 Kettle.switch_on(kenwood)
 print(kenwood.on)
 
+
 # This is an instance variable since only kenwood will know about it but not
 # any other instance
 kenwood.power = 1.5
@@ -48,6 +53,18 @@ print(f'kenwood power: {kenwood.power}')
 # print(f'hamilton power: {hamilton.power}')
 # AttributeError: 'Kettle' object has no attribute 'power'
 # print(f'hamilton power: {hamilton.power}')
+
+print(kenwood.power_source)
+print(hamilton.power_source)
+print(Kettle.power_source)
+hamilton.power_source = 'Gas'
+print(hamilton.power_source)
+
+print('Get all instance variable')
+print(Kettle.__dict__)
+print(hamilton.__dict__)
+print(kenwood.__dict__)
+
 
 if __name__ == "__main__":
     print('running as main')

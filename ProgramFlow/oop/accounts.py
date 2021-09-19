@@ -87,5 +87,19 @@ if __name__ == "__main__":
     steph.withdraw(200)
     steph.show_balance()
     steph.show_transaction()
+
+    # mangling in python
+    '''
+    When we start an attribute name with __ python mangles it with class name
+    hence __balance becomes _Accounts__balance (verified by "print(steph.__dict__)"
+    output {'_name': 'Steph', '_Accounts__balance': 700))
+    '''
+    print(steph.__dict__)
+    # if we really need to do it
+    # we can modify the mangled attribute
+    # modifying the mangled attribute
+    # print('Modifying mangled attribute')
+    # steph._Accounts__balance = 40
+    # steph.show_balance()
 else:
     print('running as module')

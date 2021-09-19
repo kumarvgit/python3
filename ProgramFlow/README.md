@@ -60,4 +60,12 @@
 since in python the object creation is a two step process
     1. new method creates an object
     2. init method provides customization to it which is called by new method
+
+#### Data mangling
+> When we start a var or a method name with __ python
+> automatically mangles the data i.e. it prefixe the attribut name
+> with _<class_name><VAR_NAME>
+> e.g. a var in class is __amount in Accounts class the effective variable name would be
+> _Accounts__amount
+> 
     

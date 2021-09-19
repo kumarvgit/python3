@@ -30,7 +30,7 @@ def load_images(card_images):
             card_images.append((10, image,))
 
 
-def deal_card(frame):
+def _deal_card(frame):
     # pop the next card off the top of the deck
     next_card = deck.pop(0)
     # and add it to back of the pack
@@ -66,7 +66,7 @@ def deal_dealer():
     """
     dealer_score = score_hand(dealer_hand)
     while 0 < dealer_score < 17:
-        dealer_hand.append(deal_card(dealer_card_frame))
+        dealer_hand.append(_deal_card(dealer_card_frame))
         dealer_score = score_hand(dealer_hand)
         dealer_score_label.set(dealer_score)
 
@@ -105,7 +105,7 @@ def deal_player():
     # if player_score > 21:
     #     result_text.set('Dealer wins!')
 
-    player_hand.append(deal_card(player_card_frame))
+    player_hand.append(_deal_card(player_card_frame))
     player_score = score_hand(player_hand)
 
     player_score_label.set(player_score)
@@ -115,7 +115,7 @@ def deal_player():
 
 def initial_deal():
     deal_player()
-    dealer_hand.append(deal_card(dealer_card_frame))
+    dealer_hand.append(_deal_card(dealer_card_frame))
     dealer_score_label.set(score_hand(dealer_hand))
     deal_player()
 
@@ -205,8 +205,6 @@ shuffle()
 # Create the list to store the dealer's and player's hands
 dealer_hand = []
 player_hand = []
-
-
 
 new_game()
 

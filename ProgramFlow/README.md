@@ -21,3 +21,5 @@
 #### when we shadow a global variable python creates a local variable and we no longer have access to global variable, this is only possible when we are reassigning the variable but not the read or accessing the variable
 
 #### global keyword inside the functions directs python to access global scope of the variable and modify it
+
+#### starts with _ var or func it is considered protected

@@ -50,13 +50,17 @@ class Flock(object):
         self.flock.append(duck)
 
     def migrate(self):
+        problem = None
         for duck in self.flock:
             try:
                 duck.fly()
-            except AttributeError:
+            except AttributeError as e:
                 print("One duck down")
-                raise AttributeError
-
+                # raise AttributeError
+                problem = e
+        # Raising a problem
+        if problem:
+            raise problem
 # def test_duck(duck):
 #     duck.walk()
 #     duck.swim()

@@ -30,6 +30,9 @@ class Duck(object):
         self._wing.fly()
 
 
+class Mallard(Duck):
+    pass
+
 class Penguin(object):
 
     def walk(self):
@@ -47,7 +50,13 @@ class Flock(object):
         self.flock = []
 
     def add_duck(self, duck: Duck) -> None:
-        self.flock.append(duck)
+        # if type(duck) is Duck:  # this is not pythonic cause python says if it flies like a duck its a duck
+        # if isinstance(duck, Duck):  #his is not pythonic cause python says if it flies like a duck its a duck
+        fly_attr = getattr(duck, "fly", None)  # this is pythonic
+        if callable(fly_attr):
+            self.flock.append(duck)
+        else:
+            raise TypeError("can not non duck to flock" + str(type(duck).__name__))
 
     def migrate(self):
         problem = None

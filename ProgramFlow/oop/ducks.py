@@ -33,7 +33,13 @@ class Duck(object):
 class Mallard(Duck):
     pass
 
+
 class Penguin(object):
+
+    def __init__(self):
+        # Mapping a function to another one
+        # here we are assigning variable to a function and then it will be called
+        self.fly = self.aviate
 
     def walk(self):
         print('Waddle, waddle, i waddle too')
@@ -43,6 +49,9 @@ class Penguin(object):
 
     def quack(self):
         print('Are you avin a larf? i am penguin')
+
+    def aviate(self):
+        print("I won a lottery and bought a learjet")
 
 
 class Flock(object):

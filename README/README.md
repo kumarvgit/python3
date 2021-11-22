@@ -81,3 +81,4 @@ since in python the object creation is a two step process
 
 #### *args - Unpacks a tuple
 #### **kwargs unpacks a dictionary
+#### rage is a generator

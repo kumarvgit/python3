@@ -30,9 +30,11 @@ def bubble_sort(data: list) -> None:
     comparison_count = 0
 
     for i in range(n - 1):
+        swapped = False  # optimized 2
         print(f"i = {i}. Starting inner loop with {format_data(data)}")
         print(end="")
-        for j in range(n - 1):
+        # for j in range(n - 1):  # un optimized
+        for j in range(n - 1 - i):  # first optimization
             print(f"{CLEAR_LINE}j = {j}, {format_data(data, j)}", end="")
             comparison_count += 1
             if data[j] > data[j + 1]:
@@ -40,6 +42,7 @@ def bubble_sort(data: list) -> None:
                       f"Swapping {data[j]} and {data[j + 1]}"
                       f"{colorama.Fore.RESET}", end="")
                 data[j], data[j + 1] = data[j + 1], data[j]
+                swapped = True  # optimized 2
                 input(f"{PREVIOUS_LINE}")
             print(f"{CLEAR_LINE}j = {j}, {format_data(data, j)}", end="")
 
@@ -47,14 +50,17 @@ def bubble_sort(data: list) -> None:
             input(f"{PREVIOUS_LINE}")
 
         print(f"End of pass {i}.  `data` is now {format_data(data)}")
+        if not swapped:  # optimized 2
+            # since last part was not swapped huence the data ia sorted
+            break
     print(f"comparison_count is {comparison_count}")
 
 
 colorama.init()
 
-numbers = [3, 2, 4, 1, 5, 7, 6]
+# numbers = [3, 2, 4, 1, 5, 7, 6]
 # numbers = [7, 6, 5, 4, 3, 2, 1]
-
+numbers = [1, 2, 3, 4, 6, 5, 7]
 print(f"Sorting {numbers}")
 bubble_sort(numbers)
 print(f"Sorted data is {numbers}")

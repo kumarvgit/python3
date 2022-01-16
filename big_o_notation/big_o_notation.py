@@ -59,8 +59,10 @@ def bubble_sort(data: list) -> None:
 colorama.init()
 
 # numbers = [3, 2, 4, 1, 5, 7, 6]
-# numbers = [7, 6, 5, 4, 3, 2, 1]
-numbers = [1, 2, 3, 4, 6, 5, 7]
+# numbers = [7, 6, 5, 4, 3, 2, 1]  # worst case when data is sorted in reverse
+# numbers = [1, 2, 3, 4, 6, 5, 7]
+numbers = [1, 2, 3, 4, 5, 6, 7]  # best case when data is sorted
 print(f"Sorting {numbers}")
 bubble_sort(numbers)
 print(f"Sorted data is {numbers}")
+# Sorting performance https://www.toptal.com/developers/sorting-algorithms/nearly-sorted-initial-order
